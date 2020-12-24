@@ -27,7 +27,9 @@ const Todo = ({ title, complete, id, darkTheme, addTodo, toggleTodo, deleteTodo 
   return (
     <TodoContainer 
       darkTheme={darkTheme}
-      onKeyPress={e => e.code === 'Enter' && handleTodo()}
+      onKeyPress={e => {
+        e.which === 13 && handleTodo()
+      }}
       onClick={e => title && handleClick(e, id)}
       className={addClass(complete && 'complete', title && 'with-title', darkTheme && 'darkTheme')}
     >

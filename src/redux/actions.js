@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid'
-let nextTodoId = 0
 
 export const addTodo = content => ({
   type: 'ADD_TODO',
