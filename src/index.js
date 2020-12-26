@@ -1,26 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 // REDUX
 import { Provider } from 'react-redux'
 import { createStore, compose } from 'redux'
-import todos from './redux/reducers/todos'
-
-// import { initialState } from './utils/initialState'
+import { reducer } from './redux/reducers'
+// Initial State
+import { initialState } from './utils'
+// App Component
 import { App } from './App'
 
-const allTodos = JSON.parse(window.localStorage.getItem('allTodos')) 
-  ? JSON.parse(window.localStorage.getItem('allTodos')) 
-  : []
-
-const initialState = {
-  allTodos: allTodos,
-  filter: 'all'
-}
-
+// Enabled Redux Developer Tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = createStore(todos, initialState, composeEnhancers())
+const store = createStore(reducer, initialState, composeEnhancers())
 
 ReactDOM.render(
   <Provider store={store}>

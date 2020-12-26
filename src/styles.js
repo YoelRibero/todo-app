@@ -14,7 +14,6 @@ export const GlobalStyle = createGlobalStyle`
     height: auto;
     min-width: 100%;
     max-width: 100%;
-    /* cursor: pointer; */
     animation: .5s imageAnimation ease;
   }
   @keyframes imageAnimation {

@@ -1,5 +1,4 @@
-
-export default function (state, action) {
+export const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO': {
       const { id, content } = action.payload
@@ -30,7 +29,7 @@ export default function (state, action) {
       const { id } = action.payload
       return {
         ...state,
-        allTodos: state.allTodos.filter(todo => todo.id !== id)
+        allTodos: state.allTodos.find(todo => todo.id !== id)
       }
     }
     case 'SET_FILTER': {
