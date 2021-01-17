@@ -1,4 +1,7 @@
 import React from 'react'
+// REDUX
+import { connect } from 'react-redux'
+import { changeTheme } from '../../redux/actions'
 // Styles
 import { Container } from '../../styles'
 import { HeroContent } from './styles'
@@ -11,13 +14,13 @@ import Todo from '../Todo'
 import iconMoon from '../../../assets/images/icon-moon.svg'
 import iconSun from '../../../assets/images/icon-sun.svg'
 
-export const Hero = ({ darkTheme, setDarkTheme }) => {
+const Hero = ({ darkTheme, changeTheme }) => {
   // Save var mobile to know page viewport
   const { mobile } = useMobile()
   // Handle of dark theme event when click on iconSun or iconMoon
   const handleDarkTheme = () => {
     // Set theme with negation of darkTheme value
-    setDarkTheme(!darkTheme)
+    changeTheme()
     // Set value of darkTheme in localStorage
     window.localStorage.setItem('darkTheme', JSON.stringify(!darkTheme))
   }
@@ -32,7 +35,7 @@ export const Hero = ({ darkTheme, setDarkTheme }) => {
           <h1>Todo</h1>
           <img
             src={darkTheme ? iconSun : iconMoon}
-            alt='Icon Moon'
+            alt={darkTheme ? 'Icon Sun' : 'Icon Moon'}
             onClick={handleDarkTheme}
           />
           <Todo 
@@ -43,3 +46,16 @@ export const Hero = ({ darkTheme, setDarkTheme }) => {
     </>
   )
 }
+
+// Send darkTheme state to component
+const mapStateToProps = state => {
+  return {
+    darkTheme: state.darkTheme
+  }
+}
+// Dispatch action changeTheme from component
+const mapDispatchToProps = {
+  changeTheme
+}
+// Conecting with Redux
+export default connect(mapStateToProps, mapDispatchToProps)(Hero)

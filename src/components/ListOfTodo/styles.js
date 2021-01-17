@@ -10,6 +10,11 @@ export const ContainerListOfTodo = styled.div`
     box-shadow: none;
     margin: 0;
   }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 export const ContainerListFooter = styled.section`

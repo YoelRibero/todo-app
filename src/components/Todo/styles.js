@@ -9,7 +9,7 @@ export const TodoContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   margin-top: 2rem;
-  padding: .5rem 1rem;
+  padding: .8rem 1rem;
   position: relative;
   width: 100%;
   input[type="text"] {
@@ -20,7 +20,6 @@ export const TodoContainer = styled.div`
     font-family: 'Josefin Sans', sans-serif;
     font-size: .9rem;
     outline: none;
-    padding: .5rem;
     width: 100%;
   }
   > img {
@@ -32,11 +31,10 @@ export const TodoContainer = styled.div`
     }
   }
   &.with-title {
-    cursor: pointer;
     border-bottom: 1px solid ${(props) =>
       props.darkTheme ? "#414462" : "hsl(233, 11%, 84%)"};
     input[type="text"] {
-      cursor: pointer;
+      cursor: grab;
       color: transparent;
       text-shadow: 0 0 0 #333;
     }
@@ -106,6 +104,7 @@ export const CheckboxFalse = styled.div`
   justify-content: center;
   min-width: 20px;
   position: relative;
+  margin-right: .5rem;
   img {
     height: 40%;
     width: 40%;

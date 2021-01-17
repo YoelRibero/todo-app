@@ -25,6 +25,13 @@ export const reducer = (state, action) => {
         ]
       }
     }
+    case 'SET_ORDER_TODO': {
+      const { todos } = action.payload
+      return {
+        ...state,
+        allTodos: todos
+      }
+    }
     case 'DELETE_TODO': {
       const { id } = action.payload
       return {
@@ -43,6 +50,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         allTodos: state.allTodos.filter(todo => !todo.completed)
+      }
+    }
+    case 'CHANGE_THEME': {
+      return {
+        ...state,
+        darkTheme: !state.darkTheme
       }
     }
     default:

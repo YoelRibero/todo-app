@@ -1,33 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
+// REDUX
+import { connect } from 'react-redux'
 // Styles
 import { GlobalStyle, Container } from './styles'
 // Components
-import { Hero } from './components/Hero'
+import Hero from './components/Hero'
 import ListOfTodo from './components/ListOfTodo'
 import FilterTodo from './components/FilterTodo'
+import { Footer } from './components/Footer'
 
-export const App = () => {
-  // Get DarkTheme from localStorage
-  const darkThemeExist = JSON.parse(window.localStorage.getItem('darkTheme'))
-  // SetState darkTheme with hook useState
-  const [darkTheme, setDarkTheme] = useState(darkThemeExist)
-  return (
-    <>
-      <GlobalStyle
-        darkTheme={darkTheme}
-      />
-      <Hero
-        darkTheme={darkTheme}
-        setDarkTheme={setDarkTheme}
-      />
-      <Container>
-        <ListOfTodo
-          darkTheme={darkTheme}
-        />
-        <FilterTodo
-          darkTheme={darkTheme}
-        />
-      </Container>
-    </>
-  )
+const App = ({ darkTheme }) => (
+  <>
+    <GlobalStyle darkTheme={darkTheme} />
+    <Hero />
+    <Container>
+      <ListOfTodo />
+      <FilterTodo />
+      <Footer />
+    </Container>
+  </>
+)
+
+// Send state theme to component
+const mapStateToProps = state => {
+  return {
+    darkTheme: state.darkTheme
+  }
 }
+// Connecting to redux
+export default connect(mapStateToProps, null)(App)

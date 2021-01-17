@@ -15,12 +15,16 @@ export const imageHero = ({ mobile, darkTheme }) => {
   }
 }
 
-// Get Todos From localStorage
+// Get Todos and Theme From localStorage
 const allTodos = JSON.parse(window.localStorage.getItem('allTodos')) 
   ? JSON.parse(window.localStorage.getItem('allTodos')) 
   : []
+const darkTheme = JSON.parse(window.localStorage.getItem('darkTheme'))
+  ? JSON.parse(window.localStorage.getItem('darkTheme'))
+  : false
 // If localStorage is empty, send array empty. Initial filter always will be 'all'
 export const initialState = {
   allTodos: allTodos,
-  filter: 'all'
+  filter: 'all',
+  darkTheme: darkTheme
 }

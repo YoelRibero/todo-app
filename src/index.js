@@ -7,7 +7,7 @@ import { reducer } from './redux/reducers'
 // Initial State
 import { initialState } from './utils'
 // App Component
-import { App } from './App'
+import App from './App'
 
 // Enabled Redux Developer Tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

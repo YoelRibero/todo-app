@@ -58,6 +58,13 @@ const Todo = ({ title, complete, id, darkTheme, addTodo, toggleTodo, deleteTodo 
     </TodoContainer>
   )
 }
+
+// Send state to component
+const mapStateToProps = state => {
+  return {
+    darkTheme: state.darkTheme
+  }
+}
 // Send actions to handle addTodo, toggleTodo and deleteTodo
 const mapDispatchToProps = {
   addTodo,
@@ -65,4 +72,4 @@ const mapDispatchToProps = {
   deleteTodo
 }
 // Connection to redux
-export default connect(null, mapDispatchToProps)(Todo)
+export default connect(mapStateToProps, mapDispatchToProps)(Todo)

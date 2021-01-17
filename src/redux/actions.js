@@ -15,6 +15,13 @@ export const toggleTodo = id => ({
   }
 })
 
+export const setOrderTodo = todos => ({
+  type: 'SET_ORDER_TODO',
+  payload: {
+    todos
+  }
+})
+
 export const deleteTodo = id => ({
   type: 'DELETE_TODO',
   payload: {
@@ -31,5 +38,10 @@ export const setFilter = filter => ({
 
 export const clearComplete = payload => ({
   type: 'CLEAR_COMPLETE',
+  payload
+})
+
+export const changeTheme = payload => ({
+  type: 'CHANGE_THEME',
   payload
 })

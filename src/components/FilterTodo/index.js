@@ -27,7 +27,8 @@ const FilterTodo = ({ darkTheme, filterState, setFilter }) => (
 // Send filter state of redux to component
 const mapStateToProps = state => {
   return {
-    filterState: state.filter
+    filterState: state.filter,
+    darkTheme: state.darkTheme
   }
 }
 // Send action setFilter to component 
