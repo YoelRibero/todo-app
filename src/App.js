@@ -9,22 +9,25 @@ import ListOfTodo from './components/ListOfTodo'
 import FilterTodo from './components/FilterTodo'
 import { Footer } from './components/Footer'
 
-const App = ({ darkTheme }) => (
+const App = ({ darkTheme, filter }) => (
   <>
     <GlobalStyle darkTheme={darkTheme} />
     <Hero />
     <Container>
       <ListOfTodo />
       <FilterTodo />
-      <Footer />
+      {
+        filter === 'all' && <Footer />
+      }
     </Container>
   </>
 )
 
 // Send state theme to component
-const mapStateToProps = state => {
+const mapStateToProps = ({ darkTheme, filter }) => {
   return {
-    darkTheme: state.darkTheme
+    darkTheme: darkTheme,
+    filter: filter
   }
 }
 // Connecting to redux

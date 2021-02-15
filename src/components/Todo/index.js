@@ -42,7 +42,7 @@ const Todo = ({ title, complete, id, darkTheme, addTodo, toggleTodo, deleteTodo 
         }
       </CheckboxFalse>
       <input
-        type="text" 
+        type="text"
         placeholder={title === undefined ? 'Create a new todo...' : ''} 
         value={title ? title : input}
         onChange={e => setInput(e.target.value)}
