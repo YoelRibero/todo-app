@@ -14,7 +14,8 @@ const Todo = ({ title, complete, id, darkTheme, addTodo, toggleTodo, deleteTodo 
   // Set State of input value
   const [input, setInput] = useState('')
   // Handle add Todo to the list
-  const handleTodo = () => {
+  const handleTodo = (e) => {
+    e.preventDefault()
     input.length > 0 &&
       addTodo(input)
       setInput('')
@@ -30,9 +31,7 @@ const Todo = ({ title, complete, id, darkTheme, addTodo, toggleTodo, deleteTodo 
   return (
     <TodoContainer 
       darkTheme={darkTheme}
-      onKeyPress={e => {
-        e.which === 13 && handleTodo()
-      }}
+      onSubmit={handleTodo}
       onClick={e => title && handleClick(e, id)}
       className={addClass(complete && 'complete', title && 'with-title', darkTheme && 'darkTheme')}
     >

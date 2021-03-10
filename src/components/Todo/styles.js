@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const TodoContainer = styled.div`
+export const TodoContainer = styled.form`
   align-items: center;
   background-color: ${(props) =>
     props.darkTheme ? "hsl(235, 24%, 19%)" : "#fff"};

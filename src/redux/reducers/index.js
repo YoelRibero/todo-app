@@ -36,7 +36,7 @@ export const reducer = (state, action) => {
       const { id } = action.payload
       return {
         ...state,
-        allTodos: state.allTodos.find(todo => todo.id !== id)
+        allTodos: state.allTodos.filter(todo => todo.id !== id)
       }
     }
     case 'SET_FILTER': {

@@ -14,7 +14,7 @@ const ListOfTodo = ({ darkTheme, todos, allTodos, filter, clearComplete, setOrde
   // Set Todos on localStorage
   window.localStorage.setItem('allTodos', JSON.stringify(allTodos))
   // Array with incompleted todos
-  const itemsLeft = todos.filter((todo) => !todo.completed);
+  const itemsLeft = todos.filter((todo) => !todo.completed)
   // Handle drag and drop mode
   const handleOnDragEnd = (result) => {
     if (!result.destination) return
