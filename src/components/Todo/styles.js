@@ -23,6 +23,7 @@ export const TodoContainer = styled.form`
     width: 100%;
   }
   > img {
+    cursor: pointer;
     max-width: 15px;
     height: 15px;
     min-width: auto;
