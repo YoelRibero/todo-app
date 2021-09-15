@@ -8,4 +8,4 @@ If you like this project I invite you to clone my project whit fork and if you f
 
 1. Clone the repository
 2. Inside the folder where you clone the repository open console and execute `npm install`
-3. Then execute npm run dev and enjoy the project 🥳
+3. Then execute `npm run dev` and enjoy the project 🥳
